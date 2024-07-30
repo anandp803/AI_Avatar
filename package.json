@@ -1,0 +1,37 @@
+{
+  "name": "ai_avatar",
+  "version": "1.0.0",
+  "description": "ai avatar",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --port 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandp803/AI_Avatar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anandp803/AI_Avatar/issues"
+  },
+  "homepage": "https://github.com/anandp803/AI_Avatar#readme",
+  "devDependencies": {
+    "@babylonjs/core": "^7.13.2",
+    "@babylonjs/inspector": "^7.13.2",
+    "html-webpack-plugin": "^5.6.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.3",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "@babylonjs/gui": "^7.14.0",
+    "@babylonjs/loaders": "^7.13.2",
+    "axios": "^1.7.2",
+    "microsoft-cognitiveservices-speech-sdk": "^1.38.0",
+    "openai": "^4.52.7"
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ai Avatar Chatbot</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>  
+        <h1 style="position: absolute;">AI Avatar ChatBot</h1>
+        <div id="ui" style="display: none;">
+            <div id="tts">
+                <h2>Conversation with AI via Text</h2>
+                <input type="text" id="tts-input" placeholder="Enter text here" />
+                <button id="tts-button">Send</button>
+            </div>
+            <div id="stt">
+                <h2>Conversation with AI via Speech</h2>
+                <button id="stt-button">Speak</button>
+                <!-- <button id="ask-question-button">Stop</button> -->
+                <!-- <p id="stt-output">Recognized text will appear here...</p> -->
+            </div>
+            <!-- <div id="conversation">
+                <h2>Conversation</h2>
+                <div id="conversation-history"></div>
+                <input type="text" id="conversation-input" placeholder="Ask something..." />
+                <button id="conversation-button">Send</button>
+            </div> -->
+            <div id="ashQuestionsBtn">
+                <h2>Your Answer is here</h2>
+                <p id="ask-question-button-input"></p>
+            </div>
+        </div>
+
+        <div id="chatBubble" class="chat-bubble">
+            💬
+        </div>
+        <div id="chatContainer" class="chat-container">
+            <div class="chat-header">
+                <h2>Chatbot</h2>
+                <button id="closeChat" class="close-button">&times;</button>
+            </div>
+            <div id="chatHistory" class="chat-history"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button id="sendChat" class="send-button">Send</button>
+                <button id="micChat" class="mic-button">🎤</button>
+                </i></button>
+            </div>
+        </div>    
+
+        <canvas id="gameCanvas"></canvas>
+    </body>
+</html>
