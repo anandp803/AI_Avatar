@@ -14,6 +14,7 @@ export class ChatUI {
     private micChat: HTMLElement;
     private chatInput: HTMLInputElement;
     private chatHistory: HTMLElement;
+    private isShowChatWindow:boolean=false;
 
     private isRecording: boolean = false;
 
@@ -37,7 +38,8 @@ export class ChatUI {
     }
 
     private toggleChatContainer() {
-        this.chatContainer.style.display = this.chatContainer.style.display === "none" ? "flex" : "none";
+        if(this.isShowChatWindow)
+        this.chatContainer.style.display = (this.chatContainer.style.display === "none" || this.chatContainer.style.display === "") ? "flex" : "none";
     }
 
     private closeChatContainer() {
@@ -81,7 +83,7 @@ export class ChatUI {
                     this.addMessageToChat("Bot", "Sorry, we couldn't find an answer to your question.");
                 }
                 this.stt.stopRecognition();
-                this.micChat.style.backgroundColor="#007bff";
+                this.micChat.style.backgroundColor="#ff6d43";
                 console.log("stop recording"); 
             });
         }

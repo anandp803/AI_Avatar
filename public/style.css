@@ -1,3 +1,6 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -74,7 +77,8 @@ h2 {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff;
+    background-color: #ff6d43;
+    border: 2px solid #ff6d43;
     color: white;
     border-radius: 50%;
     width: 50px;
@@ -102,8 +106,9 @@ h2 {
 }
 
 .chat-header {
-    background-color: #007bff;
-    color: white;
+    background-color: #ff6d43;
+    border: 2px solid #ff6d43;
+    color:black;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -113,7 +118,7 @@ h2 {
 .close-button {
     background: none;
     border: none;
-    color: white;
+    color: black;
     font-size: 20px;
     cursor: pointer;
 }
@@ -139,8 +144,10 @@ h2 {
 }
 
 .send-button {
-    background-color: #007bff;
-    color: white;
+    background-color: #ff6d43;
+    border: 2px solid #ff6d43;
+    color: black;
+    font-weight: bold;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -148,10 +155,13 @@ h2 {
 }
 
 .mic-button {
-    background-color: #007bff;
-    color: white;
+    background-color: #ff6d43;
+    border: 2px solid #ff6d43;
+    color: black;
+    font-weight: bold;
     border: none;
     padding: 10px;
     cursor: pointer;
-
 }
+
+
