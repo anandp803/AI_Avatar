@@ -18,6 +18,7 @@ export class TextToSpeech {
 
   constructor(subscriptionKey: string, region: string, _avatar: AbstractMesh) {
     const speechConfig = SpeechConfig.fromSubscription(subscriptionKey, region);
+    //speechConfig.speechSynthesisVoiceName="en-GB-RyanNeural";
     const audioConfig = AudioConfig.fromDefaultSpeakerOutput();
     this.speechSynthesizer = new SpeechSynthesizer(speechConfig, audioConfig);
     this.avatar = _avatar;
@@ -80,6 +81,7 @@ export class TextToSpeech {
         console.log("Synthesis finished and talk animation started");
         onSpeakingStarted();
         this.playAudioAndWait(e.result.audioData, onSpeakingEnded);
+        this.synchronizeLipSync();
       } else {
         console.error(
           "Synthesis did not complete successfully: " + e.result.errorDetails
@@ -173,7 +175,7 @@ export class TextToSpeech {
       
       // Find and apply the target viseme based on the viseme ID
       //const visemeName = this.visemeToExpressionMap[visemeId];
-      console.log(`Viseme ID: ${visemeId}, Mapped Expression: ${visemeId}`);
+      //console.log(`Viseme ID: ${visemeId}, Mapped Expression: ${visemeId}`);
 
       if (!visemeId) {
         throw new Error(

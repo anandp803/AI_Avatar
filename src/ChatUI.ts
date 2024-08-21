@@ -38,8 +38,9 @@ export class ChatUI {
     }
 
     private toggleChatContainer() {
-        if(this.isShowChatWindow)
+        // Check if the chat container is either hidden or not explicitly set, and then toggle its display
         this.chatContainer.style.display = (this.chatContainer.style.display === "none" || this.chatContainer.style.display === "") ? "flex" : "none";
+
     }
 
     private closeChatContainer() {

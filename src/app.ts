@@ -30,8 +30,8 @@ export class App {
   private isRecording: boolean = false;
 
   // Your Azure subscription key and region
-  private subscriptionKey = "e8e1f4c5964c47e5920d979cb4306902";
-  private serviceRegion = "eastasia";
+  private subscriptionKey = process.env.AZURE_SUBSCRIPTION_KEY;//"e8e1f4c5964c47e5920d979cb4306902";
+  private serviceRegion = process.env.AZURE_REGION;//"eastasia";
   private questionAnswer: CustomerService;
 
   constructor() {
@@ -41,10 +41,13 @@ export class App {
       })
       .catch((error) => {
         console.error("Error initializing scene:", error);
-      });
+      });     
   }
 
   private async initializeScene() {
+
+    console.log('Azure Subscription Key:', this.subscriptionKey);
+    console.log('Azure Region:', this.serviceRegion);
     // Create the canvas HTML element and attach it to the webpage
     const canvas = document.getElementById("gameCanvas") as HTMLCanvasElement;
     document.body.appendChild(canvas);
@@ -66,7 +69,7 @@ export class App {
 
     // Create AvatarLoader and load avatar
     this.avatarLoader = new AvatarLoader(scene);
-    const avatarUrl = "/assets/RPM_Mixamo_Rig_V2.glb"; // Replace with your avatar URL
+    const avatarUrl = "/assets/EVI anim.glb"; // Replace with your avatar URL
     await this.avatarLoader.loadAvatar(avatarUrl); // Wait for the avatar to load
 
     if (this.avatarLoader.avatar) {
@@ -133,8 +136,8 @@ export class App {
       this.questionAnswer
     );
 
-    // Set up UI interactions
-    this.setupUI();
+    // // Set up UI interactions
+    // this.setupUI();
 
     //test
     this.speakAnswer("this is test answeer you need to speak out");
@@ -246,15 +249,19 @@ export class App {
     console.log("Speaking has started.");
     // Add any additional actions you want to perform when speaking starts
     this.avatarLoader.stopAllAnimations();
-    this.avatarLoader.playAnimation("Walking");
-    this.tts.synchronizeLipSync();
+    this.avatarLoader.playAnimation("Talk",true);  
+    //this.avatarLoader.playAnimationBetweenFrames("Talk",50,250,true);
+    //this.avatarLoader.blendAnimations("Talk","Idle",10);
+
   };
 
   public onSpeakingEnded = () => {
     console.log("Speaking has ended.");
     // Add any additional actions you want to perform when speaking ends
     this.avatarLoader.stopAllAnimations();
-    this.avatarLoader.playAnimation("Idle");
+    this.avatarLoader.playAnimation("Idle",true);
+    //this.avatarLoader.playAnimationBetweenFrames("Idle",0,250,true);
+    //this.avatarLoader.blendAnimations("Idle","Talk",10);
     // Remove all elements from the visemeData array
     this.tts.visemeData.splice(0, this.tts.visemeData.length);
     this.tts.resetMorphTargets();

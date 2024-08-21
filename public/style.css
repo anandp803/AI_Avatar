@@ -65,9 +65,9 @@ h2 {
   #gameCanvas {
     position: fixed;
     bottom: 100px;
-    right: 300px;
-    width: 200px; /* Adjust width as needed */
-    height: 400px; /* Adjust height as needed */
+    right: 325px;
+    width: 225px; /* Adjust width as needed */
+    height: 425px; /* Adjust height as needed */
     z-index: 1000; /* Ensure it's on top of other content */
     background: transparent; /* Transparent background */
   }
